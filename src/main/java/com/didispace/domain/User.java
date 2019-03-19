@@ -1,11 +1,25 @@
 package com.didispace.domain;
 
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private Long id;
     private String name;
     private Integer age;
+
+    public User() {
+        super();
+    }
+
+    public User(String name, Integer age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
 
     public Long getId() {
         return id;
@@ -29,5 +43,10 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "userName " + this.name + ", age " + this.age;
     }
 }
