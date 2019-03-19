@@ -1,0 +1,5 @@
+com/didispace/domain/User.class
+com/didispace/web/HelloController.class
+com/didispace/Application.class
+com/didispace/web/UserController.class
+com/didispace/Swagger2.class
