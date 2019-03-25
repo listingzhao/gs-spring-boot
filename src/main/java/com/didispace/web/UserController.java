@@ -7,13 +7,6 @@ import java.util.*;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;
 
-/**
- *
- * @author 程序猿DD
- * @version 1.0.0
- * @blog http://blog.didispace.com
- *
- */
 @RestController
 @RequestMapping(value="/users")     // 通过这里配置使下面的映射都在/users下，可去除
 public class UserController {
