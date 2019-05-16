@@ -24,4 +24,12 @@ public class UserService {
         userMapper.insert(user);
         return 0;
     }
+
+    public User getUser(Long id) {
+        return userMapper.getUser(id);
+    }
+
+    public void updateUser(User user) {
+        userMapper.update(user);
+    }
 }
