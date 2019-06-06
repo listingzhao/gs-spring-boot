@@ -43,9 +43,9 @@ public class UserMapperTest {
         User user = userMapper.getUser(3l);
         if(null != user) {
             System.out.println(user.toString());
-            user.setName("listing");
+            user.setUsername("listing");
             userMapper.update(user);
-            Assert.assertTrue(("listing".equals(userMapper.getUser(3l).getName())));
+            Assert.assertTrue(("listing".equals(userMapper.getUser(3l).getUsername())));
         }
 
     }

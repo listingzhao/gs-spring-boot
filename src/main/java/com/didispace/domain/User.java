@@ -1,24 +1,97 @@
 package com.didispace.domain;
 
 
-import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
+import java.util.Date;
+
+@ApiModel(value="user对象",description="用户对象user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    private String name;
+
+    @ApiModelProperty(value="昵称",name="nickName")
+    private String nickName;
+    @ApiModelProperty(value="年龄",name="age")
     private Integer age;
+    @ApiModelProperty(value="用户名",name="username")
+    private String username;
+    @ApiModelProperty(value="密码",name="password")
+    private String password;
+    @ApiModelProperty(value="角色",name="roles")
+    private String roles;
+    private Long createTime;
+    private Long updateTime;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
 
     public User() {
         super();
+        this.createTime = new Date().getTime();
+        this.updateTime = new Date().getTime();
     }
 
     public User(String name, Integer age) {
         super();
-        this.name = name;
+        this.username = name;
         this.age = age;
+        this.createTime = new Date().getTime();
+        this.updateTime = new Date().getTime();
+
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public Long getId() {
@@ -29,13 +102,6 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Integer getAge() {
         return age;
@@ -47,6 +113,6 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "userName " + this.name + ", age " + this.age;
+        return "userName " + this.username + ", age " + this.age;
     }
 }

@@ -3,38 +3,50 @@
 <mapper namespace="com.didispace.mapper.UserMapper" >
     <resultMap id="BaseResultMap" type="com.didispace.domain.User" >
         <id column="id" property="id" jdbcType="BIGINT" />
-        <result column="u_name" property="name" jdbcType="VARCHAR" />
+        <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
         <result column="age" property="age" jdbcType="INTEGER" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="roles" property="roles" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="BIGINT" />
+        <result column="update_time" property="updateTime" jdbcType="BIGINT" />
     </resultMap>
 
     <sql id="Base_Column_List" >
-        id, u_name, age
+        id, nick_name, age, username, password, roles, create_time, update_time
     </sql>
 
     <select id="getAll" resultMap="BaseResultMap"  >
         SELECT
         <include refid="Base_Column_List" />
-        FROM users
+        FROM gs_user
     </select>
 
     <select id="getUser" parameterType="java.lang.Long" resultMap="BaseResultMap" >
         SELECT
         <include refid="Base_Column_List" />
-        FROM users
+        FROM gs_user
         WHERE id = #{id}
+    </select>
+
+    <select id="getUserByUsername" parameterType="java.lang.String" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM gs_user
+        WHERE username = #{username}
     </select>
 
     <insert id="insert" parameterType="com.didispace.domain.User" >
         INSERT INTO
-        users
-        (u_name,age)
+        gs_user
+        (username,password, create_time, update_time)
         VALUES
-        (#{name}, #{age})
+        (#{username}, #{password}, #{createTime}, #{updateTime})
     </insert>
 
     <update id="update" parameterType="com.didispace.domain.User" >
         UPDATE
-        users
+        gs_user
         SET
         <if test="name != null">u_name = #{name},</if>
         <if test="age != null">age = #{age}</if>
@@ -44,7 +56,7 @@
 
     <delete id="delete" parameterType="java.lang.Long" >
         DELETE FROM
-        users
+        gs_user
         WHERE
         id =#{id}
     </delete>

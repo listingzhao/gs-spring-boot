@@ -7,6 +7,7 @@ import java.util.*;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;
 
+@Api(value="用户controller", tags={""})
 @RestController
 @RequestMapping(value="/users")     // 通过这里配置使下面的映射都在/users下，可去除
 public class UserController {
@@ -43,7 +44,7 @@ public class UserController {
     @RequestMapping(value="/{id}", method=RequestMethod.PUT)
     public String putUser(@PathVariable Long id, @RequestBody User user) {
         User u = users.get(id);
-        u.setName(user.getName());
+        u.setUsername(user.getUsername());
         u.setAge(user.getAge());
         users.put(id, u);
         return "success";
