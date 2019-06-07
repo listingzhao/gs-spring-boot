@@ -1,6 +1,6 @@
 package com.didispace.web;
 
-import com.didispace.TokenVo;
+import com.didispace.vo.TokenVo;
 import com.didispace.domain.User;
 import com.didispace.service.AuthService;
 import com.didispace.service.UserService;

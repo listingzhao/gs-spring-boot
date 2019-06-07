@@ -1,6 +1,6 @@
 package com.didispace.service;
 
-import com.didispace.TokenVo;
+import com.didispace.vo.TokenVo;
 
 /**
  * Created with com.didispace.service.

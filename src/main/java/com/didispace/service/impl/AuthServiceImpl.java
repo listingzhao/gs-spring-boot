@@ -1,6 +1,6 @@
 package com.didispace.service.impl;
 
-import com.didispace.TokenVo;
+import com.didispace.vo.TokenVo;
 import com.didispace.service.AuthService;
 import com.didispace.utils.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Date;
 

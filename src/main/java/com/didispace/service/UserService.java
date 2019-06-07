@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,27 +16,15 @@ import java.util.Set;
  * @author: Xavier
  * @time: 2019/3/21 17:41
  */
-@Component
-public class UserService {
-    @Autowired
-    private UserMapper userMapper;
+public interface UserService {
 
-    @Transactional
-    public int saveUser (User user) {
-        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-        userMapper.insert(user);
-        return 0;
-    }
+    public List<User> getUserList();
 
-    public User getUser(Long id) {
-        return userMapper.getUser(id);
-    }
+    public int saveUser(User user);
 
-    public User getUserByUsername (String username) {
-        return userMapper.getUserByUsername(username);
-    }
+    public User getUser(Long id);
 
-    public void updateUser(User user) {
-        userMapper.update(user);
-    }
+    public User getUserByUsername(String username);
+
+    public void updateUser(User user);
 }

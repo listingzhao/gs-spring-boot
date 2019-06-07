@@ -1,6 +1,7 @@
 package com.didispace.filter;
 
 import com.didispace.utils.JwtTokenUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -33,7 +34,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
-        String token = httpServletRequest.getHeader(HEADER_STRING);
+        String token = getJwtToken(httpServletRequest);
         if (null != token) {
             String username = jwtTokenUtil.getUsernameFromToken(token);
             if (null != username && null == SecurityContextHolder.getContext().getAuthentication()) {
@@ -46,5 +47,10 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             }
         }
         filterChain.doFilter(httpServletRequest,httpServletResponse);
+    }
+
+    protected String getJwtToken(HttpServletRequest httpServletRequest) {
+        String authInfo = httpServletRequest.getHeader(HEADER_STRING);
+        return StringUtils.removeStart(authInfo, "Bearer ");
     }
 }

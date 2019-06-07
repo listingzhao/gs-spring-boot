@@ -1,4 +1,4 @@
-package com.didispace;
+package com.didispace.vo;
 
 /**
  * Created with com.didispace.
