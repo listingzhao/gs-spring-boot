@@ -51,6 +51,9 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
     protected String getJwtToken(HttpServletRequest httpServletRequest) {
         String authInfo = httpServletRequest.getHeader(HEADER_STRING);
-        return StringUtils.removeStart(authInfo, "Bearer ");
+        if(null != authInfo) {
+            return StringUtils.removeStart(authInfo, "Bearer ");
+        }
+        return null;
     }
 }
