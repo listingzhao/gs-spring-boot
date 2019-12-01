@@ -7,16 +7,16 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
-@ApiModel(value="user对象",description="用户对象user")
+@ApiModel(value="User",description="用户对象user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @ApiModelProperty(value="ID",name="id", example = "1")
     private Long id;
 
     @ApiModelProperty(value="昵称",name="nickName")
     private String nickName;
-    @ApiModelProperty(value="年龄",name="age")
+    @ApiModelProperty(value="年龄",name="age", example = "12")
     private Integer age;
     @ApiModelProperty(value="用户名",name="username")
     private String username;
@@ -24,7 +24,9 @@ public class User implements Serializable {
     private String password;
     @ApiModelProperty(value="角色",name="roles")
     private String roles;
+    @ApiModelProperty(value="创建时间",name="createTime", example = "1575193318")
     private Long createTime;
+    @ApiModelProperty(value="更新时间",name="updateTime", example = "1575193318")
     private Long updateTime;
 
     public String getUsername() {
