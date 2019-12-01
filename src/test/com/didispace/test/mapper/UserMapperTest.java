@@ -1,7 +1,7 @@
-package com.didispace.test.mapper;
+package com.leyiju.test.mapper;
 
-import com.didispace.domain.User;
-import com.didispace.mapper.UserMapper;
+import com.leyiju.domain.User;
+import com.leyiju.mapper.UserMapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 /**
- * Created with didispace.test.
+ * Created with leyiju.test.
  *
  * @author: Xavier
  * @time: 2019/3/19 20:50

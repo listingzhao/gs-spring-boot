@@ -1,4 +1,4 @@
-package com.didispace.test;
+package com.leyiju.test;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.net.URL;
 
 /**
- * Created with didispace.test.
+ * Created with leyiju.test.
  *
  * @author: Xavier
  * @time: 2019/3/19 16:53
