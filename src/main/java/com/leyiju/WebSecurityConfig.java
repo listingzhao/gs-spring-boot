@@ -76,7 +76,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private CustomFromLoginFilter customFromLoginFilter() {
-        return new CustomFromLoginFilter("/auth/getWebToken", customUserService);
+        return new CustomFromLoginFilter("/auth/token", customUserService);
     }
 
 //    private QQAuthenticationFilter qqAuthenticationFilter() {

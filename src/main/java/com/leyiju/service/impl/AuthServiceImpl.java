@@ -46,4 +46,19 @@ public class AuthServiceImpl implements AuthService {
         tokenVo.setTokenType("Bearer");
         return tokenVo;
     }
+
+    @Override
+    public TokenVo refreshToken(String oldToken) {
+        String token = oldToken.substring("Bearer ".length());
+        TokenVo tokenVo = new TokenVo();
+        if (jwtTokenUtil.isTokenExpired(token)) {
+            String newToken = jwtTokenUtil.refreshToken(token);
+            tokenVo.setAccessToken(newToken);
+            tokenVo.setAuthTime(new Date().getTime());
+            tokenVo.setExpiresIn(jwtTokenUtil.getExpirationDateFromToken(token).getTime());
+            tokenVo.setTokenType("Bearer");
+            return tokenVo;
+        }
+        return null;
+    }
 }

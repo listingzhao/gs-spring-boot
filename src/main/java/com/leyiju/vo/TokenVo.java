@@ -1,12 +1,17 @@
 package com.leyiju.vo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Created with com.leyiju.
  *
  * @author: Xavier
  * @time: 2019/6/7 14:11
  */
+@ApiModel(value="TokenVo",description="用户对象user")
 public class TokenVo {
+    @ApiModelProperty(value="Token",name="accessToken")
     private String accessToken;
     private String tokenType;
     private Long authTime;

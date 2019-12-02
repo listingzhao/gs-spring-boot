@@ -44,18 +44,38 @@ public class AuthController {
 
     @ApiOperation(value = "用户登录", notes = "根据用户名密码登录")
     @ResponseBody
-    @RequestMapping(value = "getWebToken", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public Map<String,Object> login(@RequestBody User user) {
-        TokenVo tokenVo = authService.auth(user.getUsername(), user.getPassword());
-        Map<String,Object> data = new HashMap<>();
+    @RequestMapping(value = "token", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public Map<String, Object> token(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password) {
+        TokenVo tokenVo = authService.auth(username, password);
+        Map<String, Object> data = new HashMap<>();
         data.put("access_token", tokenVo.getAccessToken());
         data.put("token_type", tokenVo.getTokenType());
         data.put("auth_time", tokenVo.getAuthTime());
         data.put("expires_in", tokenVo.getExpiresIn());
-        Map<String,Object> response = new HashMap<>();
+        Map<String, Object> response = new HashMap<>();
         response.put("data", data);
         response.put("code", 200);
-        System.out.println(tokenVo);
+        return response;
+    }
+
+    @ApiOperation(value = "刷新token", notes = "根据旧token")
+    @ResponseBody
+    @RequestMapping(value = "refreshToken", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public Map<String, Object> refreshToken(@RequestParam(value = "token") String token) {
+        Map<String, Object> response = new HashMap<>();
+        TokenVo tokenVo = authService.refreshToken(token);
+        if (null == tokenVo) {
+            response.put("code", -1);
+            response.put("msg", "token未过期");
+            return response;
+        }
+        Map<String, Object> data = new HashMap<>();
+        data.put("access_token", tokenVo.getAccessToken());
+        data.put("token_type", tokenVo.getTokenType());
+        data.put("auth_time", tokenVo.getAuthTime());
+        data.put("expires_in", tokenVo.getExpiresIn());
+        response.put("data", data);
+        response.put("code", 200);
         return response;
     }
 }
