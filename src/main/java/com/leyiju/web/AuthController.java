@@ -52,10 +52,7 @@ public class AuthController {
         data.put("token_type", tokenVo.getTokenType());
         data.put("auth_time", tokenVo.getAuthTime());
         data.put("expires_in", tokenVo.getExpiresIn());
-        Map<String, Object> response = new HashMap<>();
-        response.put("data", data);
-        response.put("code", 200);
-        return response;
+        return data;
     }
 
     @ApiOperation(value = "刷新token", notes = "根据旧token")
