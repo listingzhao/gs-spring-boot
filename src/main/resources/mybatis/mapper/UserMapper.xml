@@ -36,6 +36,13 @@
         WHERE username = #{username}
     </select>
 
+    <select id="getUserByPhone" parameterType="java.lang.String" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM gs_user
+        WHERE phone = #{phone}
+    </select>
+
     <insert id="insert" parameterType="com.leyiju.domain.User" >
         INSERT INTO
         gs_user

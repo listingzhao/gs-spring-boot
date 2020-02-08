@@ -26,5 +26,7 @@ public interface UserService {
 
     public User getUserByUsername(String username);
 
+    public User getUserByPhone(String phone);
+
     public void updateUser(User user);
 }

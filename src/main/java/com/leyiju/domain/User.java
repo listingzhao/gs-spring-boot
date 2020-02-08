@@ -16,10 +16,18 @@ public class User implements Serializable {
 
     @ApiModelProperty(value="昵称",name="nickName")
     private String nickName;
+
     @ApiModelProperty(value="年龄",name="age", example = "12")
     private Integer age;
+
+
+
+    @ApiModelProperty(value="手机号",name="username")
+    private String phone;
+
     @ApiModelProperty(value="用户名",name="username")
     private String username;
+
     @ApiModelProperty(value="密码",name="password")
     private String password;
     @ApiModelProperty(value="角色",name="roles")
@@ -111,6 +119,14 @@ public class User implements Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override

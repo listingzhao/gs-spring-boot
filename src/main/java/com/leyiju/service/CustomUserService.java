@@ -31,7 +31,6 @@ public class CustomUserService implements UserDetailsService {
             throw new UsernameNotFoundException("用户不存在！");
         }
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        System.out.println(user.getPassword());
         grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
     }

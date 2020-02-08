@@ -33,8 +33,8 @@ public class HandlerMethodReturnValueHandlerProxy implements HandlerMethodReturn
     @Override
     public void handleReturnValue(Object o, MethodParameter methodParameter, ModelAndViewContainer modelAndViewContainer, NativeWebRequest nativeWebRequest) throws Exception {
         Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("statusCode", STATUS_CODE_SUCCEEDED);
-        resultMap.put("errorMessage", "");
+        resultMap.put("code", STATUS_CODE_SUCCEEDED);
+        resultMap.put("msg", "");
         resultMap.put("data", o);
 
         proxyObject.handleReturnValue(resultMap, methodParameter, modelAndViewContainer, nativeWebRequest);

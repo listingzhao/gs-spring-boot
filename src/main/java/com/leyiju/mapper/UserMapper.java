@@ -17,6 +17,8 @@ public interface UserMapper {
 
     User getUserByUsername(String username);
 
+    User getUserByPhone(String phone);
+
     void insert(User user);
 
     void update(User user);
