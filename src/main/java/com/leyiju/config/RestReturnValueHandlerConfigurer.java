@@ -1,4 +1,4 @@
-package com.leyiju;
+package com.leyiju.config;
 
 import com.leyiju.service.handler.HandlerMethodReturnValueHandlerProxy;
 import org.springframework.beans.factory.InitializingBean;

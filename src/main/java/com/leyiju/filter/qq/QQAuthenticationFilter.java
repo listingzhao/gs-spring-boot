@@ -43,7 +43,7 @@ public class QQAuthenticationFilter extends AbstractAuthenticationProcessingFilt
     }
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException, ServletException {
+    public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException {
         String code = httpServletRequest.getParameter(CODE);
         System.out.println("Code : " + code);
         String  tokenAccessApi = String.format(TOKEN_ACCESS_API, accessTokenUri, grantType, clientId, clientSecret, code, redirectUri);

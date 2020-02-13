@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.leyiju.mapper.AuthorMapper" >
+    <resultMap id="BaseResultMap" type="com.leyiju.domain.Author" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="resource_id" property="resourceId" jdbcType="BIGINT" />
+        <result column="group_id" property="groupId" jdbcType="BIGINT" />
+        <result column="resource_type" property="resourceType" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="BIGINT" />
+        <result column="update_time" property="updateTime" jdbcType="BIGINT" />
+    </resultMap>
+
+    <sql id="base" >
+        id, resource_id, group_id, resource_type, create_time, update_time
+    </sql>
+
+    <select id="getAuthorsByGroupId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="base" />
+        FROM gs_author
+        WHERE group_id = #{groupId}
+    </select>
+
+</mapper>

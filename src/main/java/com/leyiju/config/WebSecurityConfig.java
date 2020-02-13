@@ -1,4 +1,4 @@
-package com.leyiju;
+package com.leyiju.config;
 
 import com.leyiju.filter.CustomFromLoginFilter;
 import com.leyiju.filter.JwtTokenFilter;
@@ -45,6 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .antMatchers("/api/auth/**").permitAll()
+                .antMatchers("/api/messages/**").permitAll()
+                .antMatchers("/api/users/**").permitAll()
+                // 鉴权
+                .antMatchers("/api/user/**").hasRole("ADMIN")
                 // swagger
                 .antMatchers("/swagger-ui.html").permitAll()
                 .antMatchers("/v2/**").permitAll()
@@ -76,7 +80,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private CustomFromLoginFilter customFromLoginFilter() {
-        return new CustomFromLoginFilter("/auth/token", customUserService);
+        return new CustomFromLoginFilter("/auth/login", customUserService);
     }
 
 //    private QQAuthenticationFilter qqAuthenticationFilter() {

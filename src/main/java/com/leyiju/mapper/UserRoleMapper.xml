@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.leyiju.mapper.UserRoleMapper" >
+    <resultMap id="BaseResultMap" type="com.leyiju.domain.UserRole" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="user_id" property="userId" jdbcType="BIGINT" />
+        <result column="role_id" property="roleId" jdbcType="BIGINT" />
+        <association property="users" javaType="com.leyiju.domain.User">
+            <id column="id" property="id" jdbcType="BIGINT" />
+            <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+            <result column="age" property="age" jdbcType="INTEGER" />
+            <result column="username" property="username" jdbcType="VARCHAR" />
+            <result column="password" property="password" jdbcType="VARCHAR" />
+            <result column="roles" property="roles" jdbcType="VARCHAR" />
+            <result column="create_time" property="createTime" jdbcType="BIGINT" />
+            <result column="update_time" property="updateTime" jdbcType="BIGINT" />
+        </association>
+        <association property="roles" javaType="com.leyiju.domain.Role">
+            <id column="id" property="id" jdbcType="BIGINT" />
+            <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+            <result column="role" property="role" jdbcType="VARCHAR" />
+            <result column="create_time" property="createTime" jdbcType="BIGINT" />
+            <result column="update_time" property="updateTime" jdbcType="BIGINT" />
+        </association>
+    </resultMap>
+
+    <sql id="base" >
+        ur.id, ur.user_id, ur.role_id, ur.create_time, ur.update_time
+    </sql>
+
+    <sql id="userColumn">
+        u.id, u.nick_name, u.age, u.username, u.password, u.roles, u.create_time, u.update_time
+    </sql>
+
+    <sql id="roleColumn">
+        r.id, r.role_name, r.role, r.create_time, r.update_time
+    </sql>
+
+    <select id="selectUserWithRoles" resultMap="BaseResultMap">
+        SELECT
+        <include refid="base" />,
+        <include refid="userColumn" />,
+        <include refid="roleColumn" />
+        FROM gs_user_role ur
+        LEFT JOIN gs_user u on u.id = ur.user_id
+        LEFT JOIN gs_role r on r.id = ur.role_id
+        WHERE user_id = #{userId}
+    </select>
+
+</mapper>

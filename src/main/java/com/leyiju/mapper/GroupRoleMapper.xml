@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.leyiju.mapper.GroupRoleMapper" >
+    <resultMap id="BaseResultMap" type="com.leyiju.domain.GroupRole" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="group_id" property="groupId" jdbcType="BIGINT" />
+        <result column="role_id" property="roleId" jdbcType="BIGINT" />
+        <association property="group" javaType="com.leyiju.domain.Group">
+            <id column="id" property="id" jdbcType="BIGINT" />
+            <result column="group_name" property="groupName" jdbcType="VARCHAR" />
+            <result column="create_time" property="createTime" jdbcType="BIGINT" />
+            <result column="update_time" property="updateTime" jdbcType="BIGINT" />
+        </association>
+        <association property="role" javaType="com.leyiju.domain.Role">
+            <id column="id" property="id" jdbcType="BIGINT" />
+            <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+            <result column="role" property="role" jdbcType="VARCHAR" />
+            <result column="create_time" property="createTime" jdbcType="BIGINT" />
+            <result column="update_time" property="updateTime" jdbcType="BIGINT" />
+        </association>
+    </resultMap>
+
+    <sql id="base" >
+        gr.id, gr.group_id, gr.role_id, gr.create_time, gr.update_time
+    </sql>
+
+    <sql id="groupColumn">
+        g.id, g.group_name, g.create_time, g.update_time
+    </sql>
+
+    <sql id="roleColumn">
+        r.id, r.role_name, r.role, r.create_time, r.update_time
+    </sql>
+
+    <select id="getGroupWithRoles" resultMap="BaseResultMap">
+        SELECT
+        <include refid="base" />,
+        <include refid="groupColumn" />,
+        <include refid="roleColumn" />
+        FROM gs_group_role gr
+        LEFT JOIN gs_group g on g.id = gr.group_id
+        LEFT JOIN gs_role r on r.id = gr.role_id
+        WHERE role_id = #{roleId}
+    </select>
+
+</mapper>

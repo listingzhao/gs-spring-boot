@@ -20,9 +20,7 @@ public class User implements Serializable {
     @ApiModelProperty(value="年龄",name="age", example = "12")
     private Integer age;
 
-
-
-    @ApiModelProperty(value="手机号",name="username")
+    @ApiModelProperty(value="手机号",name="phone", example = "15100000000")
     private String phone;
 
     @ApiModelProperty(value="用户名",name="username")
@@ -32,9 +30,9 @@ public class User implements Serializable {
     private String password;
     @ApiModelProperty(value="角色",name="roles")
     private String roles;
-    @ApiModelProperty(value="创建时间",name="createTime", example = "1575193318")
+    @ApiModelProperty(value="创建时间",name="createTime", example = "1559719525000")
     private Long createTime;
-    @ApiModelProperty(value="更新时间",name="updateTime", example = "1575193318")
+    @ApiModelProperty(value="更新时间",name="updateTime", example = "1559719525000")
     private Long updateTime;
 
     public String getUsername() {

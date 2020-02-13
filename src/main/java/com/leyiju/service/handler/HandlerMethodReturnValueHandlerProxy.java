@@ -4,7 +4,6 @@ import org.springframework.core.MethodParameter;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.method.support.ModelAndViewContainer;
-import sun.reflect.generics.tree.ReturnType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +36,6 @@ public class HandlerMethodReturnValueHandlerProxy implements HandlerMethodReturn
         resultMap.put("msg", "");
         resultMap.put("data", o);
 
-        proxyObject.handleReturnValue(resultMap, methodParameter, modelAndViewContainer, nativeWebRequest);
+        proxyObject.handleReturnValue(o, methodParameter, modelAndViewContainer, nativeWebRequest);
     }
 }

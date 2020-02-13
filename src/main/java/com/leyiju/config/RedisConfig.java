@@ -1,4 +1,4 @@
-package com.leyiju;
+package com.leyiju.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

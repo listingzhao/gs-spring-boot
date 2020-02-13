@@ -1,4 +1,4 @@
-package com.leyiju;
+package com.leyiju.config;
 
 import com.google.common.collect.Lists;
 import org.springframework.context.annotation.Bean;
@@ -56,7 +56,7 @@ public class Swagger2 {
                 .title("Spring Boot中使用Swagger2构建RESTful APIs")
                 .description("xxx接口文档说明")
                 .termsOfServiceUrl("http://blog.leyiju.com/")
-                .contact("kk")
+                .contact("listing")
                 .version("1.0")
                 .build();
     }

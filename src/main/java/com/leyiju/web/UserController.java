@@ -1,18 +1,25 @@
 package com.leyiju.web;
 
+import com.leyiju.base.ResponseEntity;
 import com.leyiju.domain.User;
 
 import java.util.*;
 
+import com.leyiju.enums.ResponseStatus;
 import com.leyiju.service.UserService;
 import io.swagger.annotations.*;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@Api(value = "用户controller", tags = {""})
+import javax.validation.Valid;
+
+/**
+ * 用户Controller
+ */
 @RestController
-@RequestMapping(value = "/api")     // 通过这里配置使下面的映射都在/users下，可去除
+@RequestMapping(value = "/api")
+@Api(value = "UserAPI")
 public class UserController {
 
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
@@ -33,16 +40,21 @@ public class UserController {
 
     @ApiOperation(value = "创建用户", notes = "根据User对象创建用户")
     @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
+    @ResponseBody
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public String postUser(@RequestBody User user) {
+    public ResponseEntity postUser(@RequestBody User user) {
         users.put(user.getId(), user);
-        return "success";
+        if(user != null) {
+            userService.saveUser(user);
+        }
+        return ResponseEntity.success(ResponseStatus.SUCCESS, user);
     }
 
     @ApiOperation(value = "获取用户详细信息", notes = "根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long", example = "123", paramType = "path")
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable Long id) {
+
         return users.get(id);
     }
 
@@ -70,8 +82,9 @@ public class UserController {
 
     @ApiOperation(value = "根据用户名查询用户", notes = "根据用户名查找用户")
     @ResponseBody
-    @RequestMapping(value = "/users/username", method = RequestMethod.POST)
-    public Map<String, Object> getUserByUserName(@RequestParam(value = "username") String username) {
+    @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String")
+    @RequestMapping(value = "/users/username/{username}", method = RequestMethod.GET)
+    public ResponseEntity getUserByUserName(@PathVariable String username) {
         Map<String, Object> response = new HashMap<>();
         User user = userService.getUserByUsername(username);
         return getStringObjectMap(response, user);
@@ -79,23 +92,20 @@ public class UserController {
 
     @ApiOperation(value = "根据手机号查询用户", notes = "根据手机号查询用户")
     @ResponseBody
-    @RequestMapping(value = "/users/phone", method = RequestMethod.POST)
-    public Map<String, Object> getUserByPhone(@RequestParam(value = "phone") String phone) {
+    @ApiImplicitParam(name = "phone", value = "手机号", required = true, dataType = "String")
+    @RequestMapping(value = "/users/phone/{phone}", method = RequestMethod.GET)
+    public ResponseEntity getUserByPhone(@PathVariable String phone) {
         Map<String, Object> response = new HashMap<>();
         User user = userService.getUserByPhone(phone);
         return getStringObjectMap(response, user);
     }
 
     @NotNull
-    private Map<String, Object> getStringObjectMap(Map<String, Object> response, User user) {
+    private ResponseEntity getStringObjectMap(Map<String, Object> response, User user) {
         if (user == null) {
-            response.put("code", -1);
-            response.put("msg", "该用户不存在");
-            return response;
+            return ResponseEntity.error(ResponseStatus.ACCOUNT_NOT_EXIST);
         }
-        response.put("data", user);
-        response.put("code", 200);
-        return response;
+        return ResponseEntity.success(ResponseStatus.SUCCESS, user);
     }
 
 }

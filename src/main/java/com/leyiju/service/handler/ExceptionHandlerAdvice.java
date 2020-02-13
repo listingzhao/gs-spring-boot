@@ -21,7 +21,7 @@ public class ExceptionHandlerAdvice {
 
     @ModelAttribute
     public void addAttribute(Model model) {
-        model.addAttribute("attribute",  "The Attribute");
+        model.addAttribute("attribute", "The Attribute");
     }
 
     @ExceptionHandler({RestException.class})
@@ -31,7 +31,7 @@ public class ExceptionHandlerAdvice {
         Map<String, Object> map = new HashMap<>();
         map.put("msg", restException.getMessage());
         map.put("url", request.getRequestURL());
-        map.put("code",  restException.getCode());
+        map.put("status", restException.getCode());
         return map;
     }
 }
