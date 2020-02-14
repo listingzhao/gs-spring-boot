@@ -7,70 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54635442-b5ff-4221-afe6-1569bc585eee" name="Default" comment="feat: 权限模块接口修改">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/base/BaseResponseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/base/ErrorResponseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/base/ResponseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/JacksonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Author.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/GroupRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/enums/ResponseStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/GroupRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/GroupRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/MenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/MenuMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/RoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/UserRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/UserRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/vo/LoginVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/vo/RegisterVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/vo/UserVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/web/MessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/http/authHttp.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/http/http-client.env.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gs-spring-boot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gs-spring-boot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/MvcConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/RestReturnValueHandlerConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/RestReturnValueHandlerConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/Swagger2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/Swagger2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/filter/CustomFromLoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/filter/CustomFromLoginFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/filter/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/filter/JwtTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/filter/qq/QQAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/filter/qq/QQAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/CustomUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/CustomUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/EntryPointUnauthorizedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/EntryPointUnauthorizedHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/ExceptionHandlerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/ExceptionHandlerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/HandlerMethodReturnValueHandlerProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/HandlerMethodReturnValueHandlerProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/RestAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/RestAccessDeniedHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/utils/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/utils/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/vo/TokenVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/vo/TokenVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/sql/all-gsdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/sql/all-gsdb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/config/RestReturnValueHandlerConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/RestReturnValueHandlerConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/EntryPointUnauthorizedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/exception/handler/EntryPointUnauthorizedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/ExceptionHandlerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/exception/handler/ExceptionHandlerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/HandlerMethodReturnValueHandlerProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/exception/handler/HandlerMethodReturnValueHandlerProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/RestAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/exception/handler/RestAccessDeniedHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/web/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -817,7 +762,7 @@
       <workItem from="1581385770630" duration="4383000" />
       <workItem from="1581417294309" duration="18045000" />
       <workItem from="1581509109783" duration="260000" />
-      <workItem from="1581509409607" duration="26898000" />
+      <workItem from="1581509409607" duration="30273000" />
     </task>
     <task id="LOCAL-00001" summary="@dev #添加权限">
       <created>1559791110969</created>
@@ -889,7 +834,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581166087953</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: 权限模块接口修改">
+      <created>1581585665472</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1581585665472</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

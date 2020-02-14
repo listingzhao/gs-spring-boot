@@ -1,4 +1,4 @@
-package com.leyiju.service.handler;
+package com.leyiju.exception.handler;
 
 import com.leyiju.exception.RestException;
 import org.springframework.http.HttpStatus;
@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created with com.leyiju.service.handler.
+ * Created with com.leyiju.exception.handler.
  *
  * @author: Xavier
  * @time: 2019/12/3 22:52

@@ -89,14 +89,14 @@ public class AuthController {
                 return ResponseEntity.error(ResponseStatus.ACCOUNT_LOGIN_ERROR);
             }
         } else {
-            if(vo.getCode().equals("0000")) {
+            if (vo.getCode().equals("0000")) {
                 tokenVo = authService.authByPhone(vo.getPhone());
             } else {
                 return ResponseEntity.error(ResponseStatus.ACCOUNT_IS_PHONECODE_ERROR);
             }
         }
 
-        if(null == tokenVo) {
+        if (null == tokenVo) {
             return ResponseEntity.error(ResponseStatus.ACCOUNT_NOT_EXIST);
         }
 

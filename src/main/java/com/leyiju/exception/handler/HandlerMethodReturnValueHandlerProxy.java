@@ -1,4 +1,4 @@
-package com.leyiju.service.handler;
+package com.leyiju.exception.handler;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created with com.leyiju.service.handler.
+ * Created with com.leyiju.exception.handler.
  *
  * @author: Xavier
  * @time: 2019/12/3 22:31
@@ -35,7 +35,7 @@ public class HandlerMethodReturnValueHandlerProxy implements HandlerMethodReturn
         resultMap.put("code", STATUS_CODE_SUCCEEDED);
         resultMap.put("msg", "");
         resultMap.put("data", o);
-
+        // 暂时直接返回
         proxyObject.handleReturnValue(o, methodParameter, modelAndViewContainer, nativeWebRequest);
     }
 }

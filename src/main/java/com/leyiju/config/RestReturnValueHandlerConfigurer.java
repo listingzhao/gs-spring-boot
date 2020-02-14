@@ -1,6 +1,6 @@
 package com.leyiju.config;
 
-import com.leyiju.service.handler.HandlerMethodReturnValueHandlerProxy;
+import com.leyiju.exception.handler.HandlerMethodReturnValueHandlerProxy;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
