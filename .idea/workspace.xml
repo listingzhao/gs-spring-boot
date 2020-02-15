@@ -6,16 +6,18 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54635442-b5ff-4221-afe6-1569bc585eee" name="Default" comment="feat: 权限模块接口修改">
+    <list default="true" id="54635442-b5ff-4221-afe6-1569bc585eee" name="Default" comment="feat: sql变更">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/sql/all-gsdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doc/sql/all-gsdb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/config/RestReturnValueHandlerConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/RestReturnValueHandlerConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/EntryPointUnauthorizedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/exception/handler/EntryPointUnauthorizedHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/ExceptionHandlerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/exception/handler/ExceptionHandlerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/HandlerMethodReturnValueHandlerProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/exception/handler/HandlerMethodReturnValueHandlerProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/handler/RestAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/exception/handler/RestAccessDeniedHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/web/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/MenuMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/http/authHttp.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/http/authHttp.http" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,8 +113,8 @@
     <option name="REQUEST_HISTORY">
       <list>
         <RestClientRequest>
-          <option name="httpMethod" value="DELETE" />
-          <option name="urlBase" value="http://localhost:8090/api/user/1234" />
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8090/api/auth/login" />
           <option name="urlPath" value="" />
           <option name="headers">
             <list>
@@ -120,12 +122,16 @@
                 <option name="key" value="Content-Type" />
                 <option name="value" value="application/json" />
               </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Authorization" />
-                <option name="value" value="Bearer undefined" />
-              </KeyValuePair>
             </list>
           </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;type&quot;: &quot;account&quot;,&#10;  &quot;username&quot;: &quot;listing&quot;,&#10;  &quot;password&quot;: &quot;123456&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8090/api/users/username/listing" />
+          <option name="urlPath" value="" />
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
@@ -157,7 +163,7 @@
               </KeyValuePair>
               <KeyValuePair>
                 <option name="key" value="Authorization" />
-                <option name="value" value="Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsaXN0aW5nIiwiZXhwIjoxNTgyMDE2OTMwfQ.ABwJrkglTXKgEIdD8FVGvFR_Wp1TmC9OSC7TW8Tr5M5BoMdl9h-IlOYdfGn17NCwkR9-6kIO5U24Pd93WQ3__Q" />
+                <option name="value" value="Bearer undefined" />
               </KeyValuePair>
             </list>
           </option>
@@ -165,8 +171,8 @@
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8090/api/auth/login" />
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:8090/api/user/1234" />
           <option name="urlPath" value="" />
           <option name="headers">
             <list>
@@ -174,10 +180,13 @@
                 <option name="key" value="Content-Type" />
                 <option name="value" value="application/json" />
               </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsaXN0aW5nIiwiZXhwIjoxNTgyMDE2OTMwfQ.ABwJrkglTXKgEIdD8FVGvFR_Wp1TmC9OSC7TW8Tr5M5BoMdl9h-IlOYdfGn17NCwkR9-6kIO5U24Pd93WQ3__Q" />
+              </KeyValuePair>
             </list>
           </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&#10;  &quot;type&quot;: &quot;account&quot;,&#10;  &quot;username&quot;: &quot;listing&quot;,&#10;  &quot;password&quot;: &quot;123456&quot;&#10;}" />
+          <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -253,13 +262,6 @@
               </KeyValuePair>
             </list>
           </option>
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8090/api/users/username/listing" />
-          <option name="urlPath" value="" />
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
@@ -543,7 +545,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.authHttp#3">
+  <component name="RunManager" selected="HTTP Request.authHttp#2">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -712,9 +714,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.authHttp#3" />
         <item itemvalue="HTTP Request.authHttp#2" />
         <item itemvalue="HTTP Request.authHttp#4" />
+        <item itemvalue="HTTP Request.authHttp#3" />
         <item itemvalue="HTTP Request.authHttp#1" />
         <item itemvalue="Maven.gs-spring-boot [spring-boot:run]" />
       </list>
@@ -762,7 +764,7 @@
       <workItem from="1581385770630" duration="4383000" />
       <workItem from="1581417294309" duration="18045000" />
       <workItem from="1581509109783" duration="260000" />
-      <workItem from="1581509409607" duration="30273000" />
+      <workItem from="1581509409607" duration="39829000" />
     </task>
     <task id="LOCAL-00001" summary="@dev #添加权限">
       <created>1559791110969</created>
@@ -841,7 +843,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581585665472</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: sql变更">
+      <created>1581672078625</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1581672078625</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -872,7 +881,8 @@
     <MESSAGE value="feat: 添加用户模块接口及统一异常处理" />
     <MESSAGE value="feat: 注册模块接口修改" />
     <MESSAGE value="feat: 权限模块接口修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 权限模块接口修改" />
+    <MESSAGE value="feat: sql变更" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: sql变更" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

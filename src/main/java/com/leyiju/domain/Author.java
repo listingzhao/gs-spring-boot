@@ -16,6 +16,8 @@ public class Author implements Serializable {
 
     private Long groupId;
 
+    private Long roleId;
+
     @ApiModelProperty(value = "资源类型", name = "resourceType", example = "1 菜单 2 内容")
     private String resourceType;
 
@@ -71,5 +73,13 @@ public class Author implements Serializable {
 
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 }

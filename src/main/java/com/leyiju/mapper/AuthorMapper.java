@@ -7,4 +7,6 @@ import java.util.List;
 public interface AuthorMapper {
 
     List<Author> getAuthorsByGroupId(Long groupId);
+
+    List<Author> getAuthorsByRoleId(Long roleId);
 }

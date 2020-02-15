@@ -92,21 +92,13 @@ public class AuthServiceImpl implements AuthService {
             // 角色组
             List<UserRole> userRoles = this.getUserRolesByUserId(user.getId());
 
-            // 权限组
-            List<GroupRole> groupRoles = new ArrayList<>();
-
-            for (UserRole userRole : userRoles) {
-                List<GroupRole> groups = this.getGroupWithRolesByRoleId(userRole.getRoleId());
-                groupRoles.addAll(groups);
-                roles.add(userRole.getRoles().getRole());
-            }
-
             // 资源组
             List<Author> authors = new ArrayList<>();
 
-            for(GroupRole groupRole : groupRoles) {
-                List<Author> auts = authorMapper.getAuthorsByGroupId(groupRole.getGroupId());
+            for (UserRole userRole : userRoles) {
+                List<Author> auts = authorMapper.getAuthorsByRoleId(userRole.getRoleId());
                 authors.addAll(auts);
+                roles.add(userRole.getRoles().getRole());
             }
 
             // 菜单列表

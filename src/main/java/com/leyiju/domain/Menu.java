@@ -14,6 +14,8 @@ public class Menu implements Serializable {
 
     private String menuName;
 
+    private String menuDesc;
+
     private Long parentId;
 
     @ApiModelProperty(value = "创建时间", name = "createTime", example = "1559719525000")
@@ -60,5 +62,9 @@ public class Menu implements Serializable {
 
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getMenuDesc() {
+        return menuDesc;
     }
 }

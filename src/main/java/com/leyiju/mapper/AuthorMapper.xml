@@ -5,13 +5,14 @@
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="resource_id" property="resourceId" jdbcType="BIGINT" />
         <result column="group_id" property="groupId" jdbcType="BIGINT" />
+        <result column="role_id" property="roleId" jdbcType="BIGINT" />
         <result column="resource_type" property="resourceType" jdbcType="VARCHAR" />
         <result column="create_time" property="createTime" jdbcType="BIGINT" />
         <result column="update_time" property="updateTime" jdbcType="BIGINT" />
     </resultMap>
 
     <sql id="base" >
-        id, resource_id, group_id, resource_type, create_time, update_time
+        id, resource_id, group_id, role_id, resource_type, create_time, update_time
     </sql>
 
     <select id="getAuthorsByGroupId" resultMap="BaseResultMap">
@@ -21,4 +22,10 @@
         WHERE group_id = #{groupId}
     </select>
 
+    <select id="getAuthorsByRoleId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="base" />
+        FROM gs_author
+        WHERE role_id = #{roleId}
+    </select>
 </mapper>
