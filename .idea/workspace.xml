@@ -6,18 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54635442-b5ff-4221-afe6-1569bc585eee" name="Default" comment="feat: sql变更">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="54635442-b5ff-4221-afe6-1569bc585eee" name="Default" comment="feat: 权限暂时去除权限组">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/domain/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/AuthorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/mapper/MenuMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-test.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/http/authHttp.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/http/authHttp.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leyiju/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leyiju/web/UserController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -764,7 +757,7 @@
       <workItem from="1581385770630" duration="4383000" />
       <workItem from="1581417294309" duration="18045000" />
       <workItem from="1581509109783" duration="260000" />
-      <workItem from="1581509409607" duration="39829000" />
+      <workItem from="1581509409607" duration="40333000" />
     </task>
     <task id="LOCAL-00001" summary="@dev #添加权限">
       <created>1559791110969</created>
@@ -850,7 +843,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581672078625</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: 权限暂时去除权限组">
+      <created>1581773338279</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1581773338279</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -882,7 +882,8 @@
     <MESSAGE value="feat: 注册模块接口修改" />
     <MESSAGE value="feat: 权限模块接口修改" />
     <MESSAGE value="feat: sql变更" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: sql变更" />
+    <MESSAGE value="feat: 权限暂时去除权限组" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 权限暂时去除权限组" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

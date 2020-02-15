@@ -17,7 +17,7 @@ import java.util.List;
  * @time: 2019/6/7 15:08
  */
 @Component
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Transactional
-    public int saveUser (User user) {
+    public int saveUser(User user) {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         userMapper.insert(user);
         return 0;
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService{
         return userMapper.getUser(id);
     }
 
-    public User getUserByUsername (String username) {
+    public User getUserByUsername(String username) {
         return userMapper.getUserByUsername(username);
     }
 
@@ -48,5 +48,10 @@ public class UserServiceImpl implements UserService{
 
     public void updateUser(User user) {
         userMapper.update(user);
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        userMapper.delete(id);
     }
 }

@@ -29,4 +29,6 @@ public interface UserService {
     public User getUserByPhone(String phone);
 
     public void updateUser(User user);
+
+    void deleteUser(Long id);
 }
